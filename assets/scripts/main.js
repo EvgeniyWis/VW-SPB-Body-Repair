@@ -23,8 +23,9 @@ navbar__adaptive_menu_cross.addEventListener("click", () => {
 
 /* Реализация drag-and-drop переноса изображения в форму */
 // TODO: исправить баг с добавлением фото при ховере на текст
-// TODO: сохранять изображение для вп
+// TODO: сохранять изображение в папку uploads
 // TODO: добавить функционал добавления нескольких изображений
+// TODO: перенести код для формы в отдельный js файл
 body_repair__leave_request__uploadForm.addEventListener('dragover', (e) => {
     e.preventDefault();
 });
