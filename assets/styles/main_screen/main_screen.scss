@@ -1,0 +1,89 @@
+/* Sass Расширения */
+%blue_button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 40px;
+    background: var(--dark-blue);
+    height: 48px;
+    color: #fff;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+// Main Screen
+.main_screen {
+    width: 100vw;
+    margin-top: 120px;
+
+    @media (max-width: 1550px) {
+        box-shadow: none;
+    }
+
+    @media (max-width: 500px) {
+        margin-top: 45px;
+    }
+
+    .main_img {
+        width: 100%;
+        max-height: 100%;
+        object-fit: cover;
+
+        @media (max-width: 500px) {
+            max-height: 74%;
+        }
+    }
+
+    .breadcrumbs {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19.5px;
+        color: var(--dark-grey);
+        display: flex;
+        word-spacing: 5px;
+        max-width: 100%;
+        padding: 0 250px;
+
+        @media (max-width: 1550px) {
+            padding: 10px 100px;
+        }
+
+        @media (max-width: 1300px) {
+            padding: 10px 40px;
+        }
+
+        @media (max-width: 600px) {
+            padding: 50px 10px;
+        }
+    }
+
+    &--caption {
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 58px;
+        color: var(--black);
+        margin: 50px 0;
+
+        @media (max-width: 500px) {
+            margin: 10px 0;
+            font-size: 32px;
+        }
+    }
+}
+
+/* Стили попапа */
+.popup__background {
+    display: flex;
+    position: fixed;
+    min-width: 100vw;
+    min-height: 100vh;
+    background-color: #060637;
+    opacity: 0;
+    transition: all .3s linear;
+    z-index: -1;
+}
+
+.popup__background__active {
+    opacity: 0.6;
+    z-index: 3;
+}
