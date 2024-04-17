@@ -1,0 +1,114 @@
+.body_repair {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    color: #000000;
+    padding: 0 200px;
+
+
+    @media (max-width: 1600px) {
+        padding: 0 100px;
+    }
+
+    @media (max-width: 1300px) {
+        padding: 0 40px;
+    }
+
+    @media (max-width: 600px) {
+        padding: 0 10px;
+        margin-top: 0;
+    }
+
+
+    &--caption {
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 58.51px;
+
+        @media (max-width: 600px) {
+            font-size: 32px;
+            line-height: 39.01px;
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 50px;
+    }
+
+    &__steps {
+        display: flex;
+        flex-direction: column;
+
+        &_wrapper {
+            display: flex;
+            flex-direction: column;
+            margin-top: 35px;
+            gap: 45px;
+        }
+
+        &--caption {
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 31.2px;
+            color: #000000;
+            text-align: left;
+        }
+    }
+
+    &__step {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        color: var(--grey);
+        text-align: left;
+        margin-left: 16px;
+
+        &--active {
+            color: var(--black);
+            position: relative;
+
+            &::after {
+                content: "";
+                display: block;
+                width: 3px;
+                min-height: 100%;
+                background-color: #0032A0;
+                position: absolute;
+                left: -15px;
+            }
+        }
+
+        &--caption {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 19.5px;
+        }
+
+        &--desc {
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 24.38px;
+            white-space: wrap;
+        }
+
+        &:nth-of-type(1) {
+            .body_repair__step--desc {
+                width: 80%;
+            }
+        }
+
+        &:nth-of-type(2) {
+            .body_repair__step--desc {
+                width: 50%;
+            }
+        }
+
+        &:nth-of-type(3) {
+            .body_repair__step--desc {
+                width: 100%;
+            }
+        }
+    }
+}
