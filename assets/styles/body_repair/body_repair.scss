@@ -1,9 +1,24 @@
+/* Sass Расширения */
+%blue_button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: var(--dark-blue);
+    height: 52px;
+    color: #fff;
+    font-weight: 700;
+    line-height: 24.38px;
+    font-size: 20px;
+    width: 100%;
+}
+
 .body_repair {
     display: flex;
     flex-direction: column;
     margin-top: 50px;
     color: #000000;
-    padding: 0 200px;
+    padding: 0 250px;
 
 
     @media (max-width: 1600px) {
@@ -108,6 +123,141 @@
         &:nth-of-type(3) {
             .body_repair__step--desc {
                 width: 100%;
+            }
+        }
+    }
+
+    /* Колонка с формой*/
+    &__leave_request {
+        display: flex;
+        flex-direction: column;
+        width: 559px;
+        height: 545px;
+        border-radius: 10px;
+        padding: 30px;
+        background-color: #FAFAFA;
+        color: #000000;
+        justify-self: center;
+
+        @media (max-width: 600px) {
+            width: 340px;
+            height: 502px;
+            padding: 20px;
+        }
+
+        &--caption {
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 31.2px;
+            text-align: center;
+        }
+
+        &--desc {
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 26px;
+            text-align: center;
+            white-space: wrap;
+            margin-top: 10px;
+            width: 60%;
+            align-self: center;
+        }
+
+        &--wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        &--info {
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 26px;
+            text-align: center;
+            color: #000000;
+        }
+
+        &--input {
+            box-shadow: 0px 1px 1px var(--light-grey);
+            width: 383px;
+            height: 30px;
+            background-color: transparent;
+            padding: 5px;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 26px;
+            color: var(--dark-grey);
+
+            &::placeholder {
+                font-weight: 400;
+                font-size: 20px;
+                line-height: 26px;
+                color: var(--dark-grey);
+
+                @media (max-width: 600px) {
+                    font-size: 16px;
+                    line-height: 20.8px;
+                }
+            }
+        }
+
+        &--button {
+            @extend %blue_button;
+            margin-top: 15px;
+
+            @media (max-width: 600px) {
+                margin-top: 0;
+            }
+        }
+
+        &--input_image {
+            width: 100%;
+            height: 112px;
+            border-image: url(../../images/leave_request__border_image.png);
+            border-image-repeat: round;
+            border-image-slice: 1;
+            border-image-width: 2px;
+            margin-top: 20px;
+            transition: .5s ease-in-out all;
+
+            &_text {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 30px;
+                gap: 5px;
+            }
+
+            &--icon {
+                min-width: 24px;
+                min-height: 24px;
+                max-width: 24px;
+                max-height: 24px;
+            }
+
+            &--text {
+                font-weight: 400;
+                font-size: 20px;
+                line-height: 26px;
+                text-align: center;
+                color: #000000;
+                white-space: wrap;
+                width: 58%;
+            }
+
+            &--choose {
+                color: var(--dark-blue);
+                text-decoration: underline;
+                font-weight: 400;
+                font-size: 20px;
+                line-height: 26px;
+                cursor: pointer;
+            }
+
+            &--active {
+                border-image-width: 4px;
+                box-shadow: inset 0px 0px 20px black;
             }
         }
     }
