@@ -12,6 +12,7 @@ const body_repair__steps_wrapper = document.getElementById("body_repair__steps_w
 const body_repair__step__3 = document.getElementById("body_repair__step__3");
 const body_repair__leave_request__button = document.getElementById("body_repair__leave_request--button");
 const body_repair__leave_request = document.getElementById("body_repair__leave_request");
+const body_repair__steps__progress_bar = document.getElementById("body_repair__steps--progress_bar");
 
 
 /* Реализация drag-n-drop переноса изображения в форму */
@@ -41,8 +42,11 @@ function leave_request__imageLoad(file) {
         body_repair__leave_request__input_number.classList.remove("body_repair__leave_request--input--disabled");
         body_repair__leave_request__input_number.disabled = false;
         body_repair__step__1.classList.remove("body_repair__step--active");
+        body_repair__step__1.classList.add("body_repair__step--adaptive");
         body_repair__step__2.classList.add("body_repair__step--active");
+        body_repair__step__2.classList.add("body_repair__step--adaptive");
         body_repair__steps_wrapper.classList.add("body_repair__steps_wrapper--step_2");
+        body_repair__steps__progress_bar.value = body_repair__steps__progress_bar.value + 30;
 
         /* Активация 3 шага */
         body_repair__leave_request__button.classList.remove("body_repair__leave_request--button--disabled");
@@ -52,9 +56,12 @@ function leave_request__imageLoad(file) {
             body_repair__steps_wrapper.classList.remove("body_repair__steps_wrapper--step_2");
             body_repair__steps_wrapper.classList.add("body_repair__steps_wrapper--step_3");
             body_repair__step__2.classList.remove("body_repair__step--active");
+            body_repair__step__2.classList.add("body_repair__step--step_3--adaptive");
             body_repair__step__3.classList.add("body_repair__step--active");
+            body_repair__step__3.classList.add("body_repair__step--step_3--adaptive");
             body_repair__leave_request.classList.add("body_repair__leave_request--disabled");
             body_repair__leave_request.disabled = true;
+            body_repair__steps__progress_bar.value = body_repair__steps__progress_bar.value + 40;
         })
     }
 
