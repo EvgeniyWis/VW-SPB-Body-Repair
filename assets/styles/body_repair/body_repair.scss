@@ -61,6 +61,30 @@
             flex-direction: column;
             margin-top: 35px;
             gap: 45px;
+            position: relative;
+
+            &::before {
+                content: "";
+                display: block;
+                width: 3px;
+                height: 30%;
+                background-color: #0032A0;
+                position: absolute;
+                top: 0;
+                transition: all .5s ease-in;
+            }
+
+            &--step_2 {
+                &::before {
+                    top: 120px;
+                }
+            }
+
+            &--step_3 {
+                &::before {
+                    top: 240px;
+                }
+            }
         }
 
         &--caption {
@@ -79,20 +103,11 @@
         color: var(--grey);
         text-align: left;
         margin-left: 16px;
+        transition: all .5s ease-in;
 
         &--active {
             color: var(--black);
             position: relative;
-
-            &::after {
-                content: "";
-                display: block;
-                width: 3px;
-                min-height: 100%;
-                background-color: #0032A0;
-                position: absolute;
-                left: -15px;
-            }
         }
 
         &--caption {
@@ -137,6 +152,17 @@
         background-color: #FAFAFA;
         color: #000000;
         justify-self: center;
+        transition: opacity .5s ease-in;
+
+        &--disabled {
+            opacity: .35;
+            pointer-events: none;
+            user-select: none;
+
+            .body_repair__leave_request--input_image--choose {
+                pointer-events: none;
+            }
+        }
 
         @media (max-width: 600px) {
             width: 340px;
@@ -179,7 +205,7 @@
 
         &--input {
             box-shadow: 0px 1px 1px var(--light-grey);
-            width: 383px;
+            width: 100%;
             height: 30px;
             background-color: transparent;
             padding: 5px;
@@ -187,12 +213,22 @@
             font-size: 20px;
             line-height: 26px;
             color: var(--dark-grey);
+            transition: opacity .5s ease-in;
+
+            &--disabled {
+                opacity: .35;
+
+                &::placeholder {
+                    opacity: .35;
+                }
+            }
 
             &::placeholder {
                 font-weight: 400;
                 font-size: 20px;
                 line-height: 26px;
                 color: var(--dark-grey);
+                transition: opacity .5s ease-in;
 
                 @media (max-width: 600px) {
                     font-size: 16px;
@@ -204,6 +240,11 @@
         &--button {
             @extend %blue_button;
             margin-top: 15px;
+            transition: opacity .5s ease-in;
+
+            &--disabled {
+                opacity: .35;
+            }
 
             @media (max-width: 600px) {
                 margin-top: 0;
@@ -224,6 +265,7 @@
             width: 100%;
             height: 100%;
             object-fit: contain;
+            border-radius: 5px;
         }
 
 

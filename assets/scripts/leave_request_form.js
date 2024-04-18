@@ -4,6 +4,15 @@ const body_repair__leave_request__input_image__text = document.getElementById("b
 const body_repair__leave_request__input_image_input = document.getElementById("body_repair__leave_request--input_image_input");
 const body_repair__leave_request__fileInput = document.getElementById("body_repair__leave_request__fileInput");
 const body_repair__leave_request__images = document.getElementById("body_repair__leave_request__images");
+const body_repair__leave_request__input_name = document.getElementById("body_repair__leave_request__input_name");
+const body_repair__leave_request__input_number = document.getElementById("body_repair__leave_request__input_number");
+const body_repair__step__1 = document.getElementById("body_repair__step__1");
+const body_repair__step__2 = document.getElementById("body_repair__step__2");
+const body_repair__steps_wrapper = document.getElementById("body_repair__steps_wrapper");
+const body_repair__step__3 = document.getElementById("body_repair__step__3");
+const body_repair__leave_request__button = document.getElementById("body_repair__leave_request--button");
+const body_repair__leave_request = document.getElementById("body_repair__leave_request");
+
 
 /* Реализация drag-n-drop переноса изображения в форму */
 function leave_request__imageLoad(file) {
@@ -17,7 +26,7 @@ function leave_request__imageLoad(file) {
 
         // Добавляю изображение в блок с загруженными изображениями:
         body_repair__leave_request__images.insertAdjacentHTML(`beforeend`,
-            `<img class="body_repair__leave_request__image" src="./uploads/${file.name}" alt="Изображение, загруженное пользователем">`);
+            `<img class="body_repair__leave_request__image" src="/wp-content/uploads/${file.name}" alt="Изображение, загруженное пользователем">`);
 
         setTimeout(() => {
             body_repair__leave_request__input_image__text.innerHTML = 'Перетащите фото сюда или <a id="body_repair__leave_request--input_image_input" class="body_repair__leave_request--input_image--choose">выберите</a> из файлов';
@@ -25,6 +34,28 @@ function leave_request__imageLoad(file) {
                 body_repair__leave_request__fileInput.click();
             });
         }, 1500);
+
+        /* Активация 2 шага */
+        body_repair__leave_request__input_name.classList.remove("body_repair__leave_request--input--disabled");
+        body_repair__leave_request__input_name.disabled = false;
+        body_repair__leave_request__input_number.classList.remove("body_repair__leave_request--input--disabled");
+        body_repair__leave_request__input_number.disabled = false;
+        body_repair__step__1.classList.remove("body_repair__step--active");
+        body_repair__step__2.classList.add("body_repair__step--active");
+        body_repair__steps_wrapper.classList.add("body_repair__steps_wrapper--step_2");
+
+        /* Активация 3 шага */
+        body_repair__leave_request__button.classList.remove("body_repair__leave_request--button--disabled");
+        body_repair__leave_request__button.disabled = false;
+
+        body_repair__leave_request__button.addEventListener("click", () => {
+            body_repair__steps_wrapper.classList.remove("body_repair__steps_wrapper--step_2");
+            body_repair__steps_wrapper.classList.add("body_repair__steps_wrapper--step_3");
+            body_repair__step__2.classList.remove("body_repair__step--active");
+            body_repair__step__3.classList.add("body_repair__step--active");
+            body_repair__leave_request.classList.add("body_repair__leave_request--disabled");
+            body_repair__leave_request.disabled = true;
+        })
     }
 
     reader.readAsDataURL(file);

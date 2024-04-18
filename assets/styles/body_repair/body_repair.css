@@ -63,6 +63,23 @@
   flex-direction: column;
   margin-top: 35px;
   gap: 45px;
+  position: relative;
+}
+.body_repair__steps_wrapper::before {
+  content: "";
+  display: block;
+  width: 3px;
+  height: 30%;
+  background-color: #0032A0;
+  position: absolute;
+  top: 0;
+  transition: all 0.5s ease-in;
+}
+.body_repair__steps_wrapper--step_2::before {
+  top: 120px;
+}
+.body_repair__steps_wrapper--step_3::before {
+  top: 240px;
 }
 .body_repair__steps--caption {
   font-weight: 700;
@@ -78,19 +95,11 @@
   color: var(--grey);
   text-align: left;
   margin-left: 16px;
+  transition: all 0.5s ease-in;
 }
 .body_repair__step--active {
   color: var(--black);
   position: relative;
-}
-.body_repair__step--active::after {
-  content: "";
-  display: block;
-  width: 3px;
-  min-height: 100%;
-  background-color: #0032A0;
-  position: absolute;
-  left: -15px;
 }
 .body_repair__step--caption {
   font-weight: 400;
@@ -121,8 +130,19 @@
   background-color: #FAFAFA;
   color: #000000;
   justify-self: center;
+  transition: opacity 0.5s ease-in;
   /* Блок с загруженными изображениями */
   /* Текст drag-n-drop блока */
+}
+.body_repair__leave_request--disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.body_repair__leave_request--disabled .body_repair__leave_request--input_image--choose {
+  pointer-events: none;
 }
 @media (max-width: 600px) {
   .body_repair__leave_request {
@@ -162,7 +182,7 @@
 }
 .body_repair__leave_request--input {
   box-shadow: 0px 1px 1px var(--light-grey);
-  width: 383px;
+  width: 100%;
   height: 30px;
   background-color: transparent;
   padding: 5px;
@@ -170,18 +190,31 @@
   font-size: 20px;
   line-height: 26px;
   color: var(--dark-grey);
+  transition: opacity 0.5s ease-in;
+}
+.body_repair__leave_request--input--disabled {
+  opacity: 0.35;
+}
+.body_repair__leave_request--input--disabled::-moz-placeholder {
+  opacity: 0.35;
+}
+.body_repair__leave_request--input--disabled::placeholder {
+  opacity: 0.35;
 }
 .body_repair__leave_request--input::-moz-placeholder {
   font-weight: 400;
   font-size: 20px;
   line-height: 26px;
   color: var(--dark-grey);
+  -moz-transition: opacity 0.5s ease-in;
+  transition: opacity 0.5s ease-in;
 }
 .body_repair__leave_request--input::placeholder {
   font-weight: 400;
   font-size: 20px;
   line-height: 26px;
   color: var(--dark-grey);
+  transition: opacity 0.5s ease-in;
 }
 @media (max-width: 600px) {
   .body_repair__leave_request--input::-moz-placeholder {
@@ -195,6 +228,10 @@
 }
 .body_repair__leave_request--button {
   margin-top: 15px;
+  transition: opacity 0.5s ease-in;
+}
+.body_repair__leave_request--button--disabled {
+  opacity: 0.35;
 }
 @media (max-width: 600px) {
   .body_repair__leave_request--button {
@@ -213,6 +250,7 @@
   height: 100%;
   -o-object-fit: contain;
      object-fit: contain;
+  border-radius: 5px;
 }
 .body_repair__leave_request--input_image {
   width: 100%;
