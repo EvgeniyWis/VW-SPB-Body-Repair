@@ -21,6 +21,7 @@
   color: #000000;
   padding: 0 250px;
   /* Колонка с формой*/
+  /* Изображение "Кузовного ремонта" */
 }
 @media (max-width: 1600px) {
   .body_repair {
@@ -229,6 +230,7 @@
 .body_repair__leave_request--button {
   margin-top: 15px;
   transition: opacity 0.5s ease-in;
+  cursor: pointer;
 }
 .body_repair__leave_request--button--disabled {
   opacity: 0.35;
@@ -301,4 +303,254 @@
 .body_repair__leave_request--input_image--active {
   border-image-width: 4px;
   box-shadow: inset 0px 0px 20px black;
+}
+.body_repair__image {
+  margin-top: 200px;
+  width: 100%;
+  height: 650px;
+  position: relative;
+  right: 30px;
+  /* Стили для каждого айтема */
+}
+.body_repair__image_wrapper {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+.body_repair__image--img {
+  width: 90%;
+  height: 90%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.body_repair__image__item {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  gap: 5px;
+  z-index: 1;
+  /* Индивидуальные стили для айтемов */
+}
+.body_repair__image__item_title {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19.5px;
+  color: var(--dark-grey);
+  border-bottom: 1px #BCBCBC solid;
+  text-align: left;
+  width: 120%;
+}
+.body_repair__image__item_price {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24.38px;
+  color: #000000;
+  text-align: left;
+}
+.body_repair__image__item--front_bumper {
+  top: 56%;
+  left: 6%;
+}
+.body_repair__image__item--bonnet {
+  top: 17%;
+  left: 14%;
+}
+.body_repair__image__item--bonnet::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 180px;
+  background-color: var(--grey);
+  transform: rotateZ(-42deg);
+  position: absolute;
+  top: -4px;
+  right: -73px;
+}
+.body_repair__image__item--window {
+  top: 1%;
+  left: 24.5%;
+}
+.body_repair__image__item--window::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 250px;
+  background-color: var(--grey);
+  transform: rotateZ(-35deg);
+  position: absolute;
+  top: -3px;
+  right: -85px;
+}
+.body_repair__image__item--door_handle {
+  top: 6%;
+  left: 44%;
+}
+.body_repair__image__item--door_handle::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 210px;
+  background-color: var(--grey);
+  transform: rotateZ(-7deg);
+  position: absolute;
+  top: 19px;
+  right: -25px;
+}
+.body_repair__image__item--roof {
+  top: 8.5%;
+  left: 62%;
+}
+.body_repair__image__item--roof .body_repair__image__item_title {
+  text-align: right;
+}
+.body_repair__image__item--roof .body_repair__image__item_price {
+  position: relative;
+  left: 10px;
+}
+.body_repair__image__item--roof::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 65px;
+  background-color: var(--grey);
+  transform: rotateZ(20deg);
+  position: absolute;
+  top: 18px;
+  right: 75px;
+}
+.body_repair__image__item--back_wing {
+  top: -14%;
+  left: 67%;
+}
+.body_repair__image__item--back_wing::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 300px;
+  background-color: var(--grey);
+  transform: rotateZ(-5deg);
+  position: absolute;
+  top: 19px;
+  right: -33px;
+}
+.body_repair__image__item--boot_cover {
+  top: 0.5%;
+  left: 88%;
+}
+.body_repair__image__item--boot_cover .body_repair__image__item_title {
+  text-align: right;
+}
+.body_repair__image__item--boot_cover .body_repair__image__item_price {
+  position: relative;
+  left: 110px;
+}
+.body_repair__image__item--boot_cover::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 242px;
+  background-color: var(--grey);
+  transform: rotateZ(25deg);
+  position: absolute;
+  top: 8px;
+  right: 194px;
+}
+.body_repair__image__item--back_bumper {
+  top: 54%;
+  left: 82.5%;
+}
+.body_repair__image__item--back_bumper .body_repair__image__item_title {
+  text-align: right;
+  width: 140%;
+}
+.body_repair__image__item--back_bumper .body_repair__image__item_price {
+  position: relative;
+  left: 75px;
+}
+.body_repair__image__item--back_door {
+  top: 85%;
+  left: 68%;
+}
+.body_repair__image__item--back_door .body_repair__image__item_title {
+  text-align: right;
+  width: 140%;
+}
+.body_repair__image__item--back_door .body_repair__image__item_price {
+  position: relative;
+  left: 75px;
+}
+.body_repair__image__item--back_door::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 270px;
+  background-color: var(--grey);
+  transform: rotateZ(-10deg);
+  position: absolute;
+  top: -247px;
+  right: 122px;
+}
+.body_repair__image__item--body_sill {
+  top: 75%;
+  left: 54%;
+}
+.body_repair__image__item--body_sill .body_repair__image__item_title {
+  text-align: right;
+  width: 140%;
+}
+.body_repair__image__item--body_sill .body_repair__image__item_price {
+  position: relative;
+  left: 75px;
+}
+.body_repair__image__item--body_sill::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 100px;
+  background-color: var(--grey);
+  transform: rotateZ(-20deg);
+  position: absolute;
+  top: -76px;
+  right: 115px;
+}
+.body_repair__image__item--front_door {
+  top: 84%;
+  left: 42%;
+}
+.body_repair__image__item--front_door .body_repair__image__item_title {
+  text-align: right;
+  width: 110%;
+}
+.body_repair__image__item--front_door .body_repair__image__item_price {
+  position: relative;
+  left: 65px;
+}
+.body_repair__image__item--front_door::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 270px;
+  background-color: var(--grey);
+  transform: rotateZ(-10deg);
+  position: absolute;
+  top: -247px;
+  right: 142px;
+}
+.body_repair__image__item--front_wing {
+  top: 80%;
+  left: 11%;
+}
+.body_repair__image__item--front_wing .body_repair__image__item_title {
+  width: 157%;
+}
+.body_repair__image__item--front_wing::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 270px;
+  background-color: var(--grey);
+  transform: rotateZ(30deg);
+  position: absolute;
+  top: -232px;
+  right: -137px;
 }/*# sourceMappingURL=body_repair.css.map */

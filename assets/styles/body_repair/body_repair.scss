@@ -241,6 +241,7 @@
             @extend %blue_button;
             margin-top: 15px;
             transition: opacity .5s ease-in;
+            cursor: pointer;
 
             &--disabled {
                 opacity: .35;
@@ -323,6 +324,297 @@
             &--active {
                 border-image-width: 4px;
                 box-shadow: inset 0px 0px 20px black;
+            }
+        }
+    }
+
+    /* Изображение "Кузовного ремонта" */
+    &__image {
+        margin-top: 200px;
+        width: 100%;
+        height: 650px;
+        position: relative;
+        right: 30px;
+
+        &_wrapper {
+            height: 100%;
+            width: 100%;
+            position: relative;
+        }
+
+        &--img {
+            width: 90%;
+            height: 90%;
+            object-fit: cover;
+        }
+
+        /* Стили для каждого айтема */
+        &__item {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            gap: 5px;
+            z-index: 1;
+
+            &_title {
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 19.5px;
+                color: var(--dark-grey);
+                border-bottom: 1px #BCBCBC solid;
+                text-align: left;
+                width: 120%;
+            }
+
+            &_price {
+                font-weight: 400;
+                font-size: 20px;
+                line-height: 24.38px;
+                color: #000000;
+                text-align: left;
+            }
+
+            /* Индивидуальные стили для айтемов */
+            &--front_bumper {
+                top: 56%;
+                left: 6%;
+            }
+
+            &--bonnet {
+                top: 17%;
+                left: 14%;
+
+                &::after {
+                    content: "";
+                    display: block;
+                    width: 1px;
+                    height: 180px;
+                    background-color: var(--grey);
+                    transform: rotateZ(-42deg);
+                    position: absolute;
+                    top: -4px;
+                    right: -73px;
+                }
+            }
+
+            &--window {
+                top: 1%;
+                left: 24.5%;
+
+                &::after {
+                    content: "";
+                    display: block;
+                    width: 1px;
+                    height: 250px;
+                    background-color: var(--grey);
+                    transform: rotateZ(-35deg);
+                    position: absolute;
+                    top: -3px;
+                    right: -85px;
+                }
+            }
+
+            &--door_handle {
+                top: 6%;
+                left: 44%;
+
+                &::after {
+                    content: "";
+                    display: block;
+                    width: 1px;
+                    height: 210px;
+                    background-color: var(--grey);
+                    transform: rotateZ(-7deg);
+                    position: absolute;
+                    top: 19px;
+                    right: -25px;
+                }
+            }
+
+            &--roof {
+                top: 8.5%;
+                left: 62%;
+
+                .body_repair__image__item_title {
+                    text-align: right;
+                }
+
+                .body_repair__image__item_price {
+                    position: relative;
+                    left: 10px;
+                }
+
+                &::after {
+                    content: "";
+                    display: block;
+                    width: 1px;
+                    height: 65px;
+                    background-color: var(--grey);
+                    transform: rotateZ(20deg);
+                    position: absolute;
+                    top: 18px;
+                    right: 75px;
+                }
+            }
+
+            &--back_wing {
+                top: -14%;
+                left: 67%;
+
+                &::after {
+                    content: "";
+                    display: block;
+                    width: 1px;
+                    height: 300px;
+                    background-color: var(--grey);
+                    transform: rotateZ(-5deg);
+                    position: absolute;
+                    top: 19px;
+                    right: -33px;
+                }
+            }
+
+            &--boot_cover {
+                top: 0.5%;
+                left: 88%;
+
+                .body_repair__image__item_title {
+                    text-align: right;
+                }
+
+                .body_repair__image__item_price {
+                    position: relative;
+                    left: 110px;
+                }
+
+                &::after {
+                    content: "";
+                    display: block;
+                    width: 1px;
+                    height: 242px;
+                    background-color: var(--grey);
+                    transform: rotateZ(25deg);
+                    position: absolute;
+                    top: 8px;
+                    right: 194px;
+                }
+            }
+
+            &--back_bumper {
+                top: 54%;
+                left: 82.5%;
+
+                .body_repair__image__item_title {
+                    text-align: right;
+                    width: 140%;
+                }
+
+                .body_repair__image__item_price {
+                    position: relative;
+                    left: 75px;
+                }
+            }
+
+            &--back_door {
+                top: 85%;
+                left: 68%;
+
+                .body_repair__image__item_title {
+                    text-align: right;
+                    width: 140%;
+                }
+
+                .body_repair__image__item_price {
+                    position: relative;
+                    left: 75px;
+                }
+
+                &::after {
+                    content: "";
+                    display: block;
+                    width: 1px;
+                    height: 270px;
+                    background-color: var(--grey);
+                    transform: rotateZ(-10deg);
+                    position: absolute;
+                    top: -247px;
+                    right: 122px;
+                }
+            }
+
+            &--body_sill {
+                top: 75%;
+                left: 54%;
+
+                .body_repair__image__item_title {
+                    text-align: right;
+                    width: 140%;
+                }
+
+                .body_repair__image__item_price {
+                    position: relative;
+                    left: 75px;
+                }
+
+                &::after {
+                    content: "";
+                    display: block;
+                    width: 1px;
+                    height: 100px;
+                    background-color: var(--grey);
+                    transform: rotateZ(-20deg);
+                    position: absolute;
+                    top: -76px;
+                    right: 115px;
+                }
+            }
+
+            &--front_door {
+                top: 84%;
+                left: 42%;
+
+                .body_repair__image__item_title {
+                    text-align: right;
+                    width: 110%;
+                }
+
+                .body_repair__image__item_price {
+                    position: relative;
+                    left: 65px;
+                }
+
+                &::after {
+                    content: "";
+                    display: block;
+                    width: 1px;
+                    height: 270px;
+                    background-color: var(--grey);
+                    transform: rotateZ(-10deg);
+                    position: absolute;
+                    top: -247px;
+                    right: 142px;
+                }
+            }
+
+            &--front_wing {
+                top: 80%;
+                left: 11%;
+
+                .body_repair__image__item_title {
+                    width: 157%;
+                }
+
+                &::after {
+                    content: "";
+                    display: block;
+                    width: 1px;
+                    height: 270px;
+                    background-color: var(--grey);
+                    transform: rotateZ(30deg);
+                    position: absolute;
+                    top: -232px;
+                    right: -137px;
+                }
             }
         }
     }
