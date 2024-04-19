@@ -56,6 +56,10 @@
             align-items: center;
             gap: 70px;
         }
+
+        @media (max-width: 600px) {
+            gap: 0;
+        }
     }
 
     &__steps {
@@ -64,6 +68,7 @@
 
         @media (max-width: 600px) {
             align-self: flex-start;
+            width: 100%;
         }
 
         &--progress_bar {
@@ -149,6 +154,12 @@
             line-height: 31.2px;
             color: #000000;
             text-align: left;
+
+            @media (max-width: 600px) {
+                font-size: 20px;
+                line-height: 26px;
+                width: 79%;
+            }
         }
     }
 
@@ -171,12 +182,8 @@
             &--step_3--adaptive {
                 transform: translateY(-375%);
 
-                @media (max-width: 500px) {
-                    transform: translateY(-445%);
-                }
-
                 @media (max-width: 450px) {
-                    transform: translateY(-310%);
+                    transform: translateY(-445%);
                 }
             }
         }
@@ -190,6 +197,11 @@
             font-weight: 400;
             font-size: 16px;
             line-height: 19.5px;
+
+            @media (max-width: 600px) {
+                font-size: 14px;
+                line-height: 17.07px;
+            }
         }
 
         &--desc {
@@ -200,6 +212,8 @@
 
             @media (max-width: 600px) {
                 width: 100% !important;
+                font-size: 16px;
+                line-height: 19.5px;
             }
         }
 
@@ -365,6 +379,10 @@
                 padding: 30px;
                 gap: 5px;
                 pointer-events: none;
+
+                @media (max-width: 600px) {
+                    gap: 20px;
+                }
             }
 
             &--icon {
@@ -382,6 +400,12 @@
                 color: #000000;
                 white-space: wrap;
                 width: 58%;
+
+                @media (max-width: 600px) {
+                    font-size: 16px;
+                    line-height: 20.8px;
+                    width: 100%;
+                }
             }
 
             &--choose {
@@ -392,6 +416,11 @@
                 line-height: 26px;
                 cursor: pointer;
                 pointer-events: all;
+
+                @media (max-width: 600px) {
+                    font-size: 16px;
+                    line-height: 20.8px;
+                }
 
                 &--drop {
                     pointer-events: none;
@@ -412,6 +441,10 @@
         height: 650px;
         position: relative;
         right: 30px;
+
+        @media (max-width: 600px) {
+            display: none;
+        }
 
         &_wrapper {
             height: 100%;
@@ -984,6 +1017,427 @@
                         transform: rotateZ(0deg);
                         top: -260%;
                         right: -11%;
+                    }
+                }
+            }
+        }
+    }
+
+    /* Адаптивное изображение "Кузовного ремонта" */
+    &__image--adaptive {
+        display: none;
+        width: 110%;
+        height: 350px;
+
+        @media (max-width: 600px) {
+            display: block;
+        }
+
+        @media (max-width: 400px) {
+            width: 130%;
+        }
+
+        &_wrapper {
+            height: 100%;
+            width: 100%;
+            position: relative;
+        }
+
+        &--img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        /* Стили для каждого айтема */
+        &__item {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            gap: 5px;
+            z-index: 1;
+
+            &_title {
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 14.63px;
+                color: var(--dark-grey);
+                border-bottom: 1px #BCBCBC solid;
+                text-align: left;
+                width: 120%;
+            }
+
+            &_price {
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 17.07px;
+                color: #000000;
+                text-align: left;
+            }
+
+            /* Индивидуальные стили для айтемов */
+            &--front_bumper {
+
+                left: 13%;
+                top: 32%;
+
+                .body_repair__image--adaptive__item_title {
+                    width: 60%;
+                }
+
+                &::after {
+                    content: "";
+                    display: block;
+                    width: 1px;
+                    height: 100px;
+                    background-color: var(--grey);
+                    transform: rotateZ(30deg);
+                    position: absolute;
+                    top: 43%;
+                    right: 65%;
+                }
+
+                @media (max-width: 500px) {
+                    top: 29%;
+                    left: 12%;
+                }
+
+                @media (max-width: 400px) {
+                    top: 26%;
+                }
+            }
+
+            &--bonnet {
+                top: 10%;
+                left: 11%;
+
+                &::after {
+                    content: "";
+                    display: block;
+                    width: 1px;
+                    height: 120px;
+                    background-color: var(--grey);
+                    transform: rotateZ(-22deg);
+                    position: absolute;
+                    top: 28%;
+                    right: -72%;
+                }
+
+                @media (max-width: 400px) {
+                    top: 10%;
+                    left: 11%;
+
+                    &::after {
+                        top: 32%;
+                        right: -58%;
+                        transform: rotateZ(-15deg);
+                    }
+                }
+            }
+
+            &--window {
+                top: -5%;
+                left: 15%;
+
+                &::after {
+                    content: "";
+                    display: block;
+                    width: 1px;
+                    height: 170px;
+                    background-color: var(--grey);
+                    transform: rotateZ(-35deg);
+                    position: absolute;
+                    top: -3%;
+                    right: -126%;
+                }
+
+                @media (max-width: 500px) {
+                    top: -1%;
+                    left: 10%;
+                }
+
+                @media (max-width: 400px) {
+                    top: -3%;
+                    left: 12%;
+
+                    &::after {
+                        transform: rotateZ(-25deg);
+                        height: 150px;
+                        top: 19%;
+                        right: -90%;
+                    }
+                }
+            }
+
+            &--door_handle {
+                top: -1%;
+                left: 40%;
+
+                &::after {
+                    content: "";
+                    display: block;
+                    width: 1px;
+                    height: 150px;
+                    background-color: var(--grey);
+                    transform: rotateZ(-7deg);
+                    position: absolute;
+                    top: 38%;
+                    right: -42%;
+                }
+
+                @media (max-width: 450px) {
+                    left: 35%;
+                }
+            }
+
+            &--roof {
+                top: 12%;
+                left: 56%;
+
+                .body_repair__image--adaptive__item_title {
+                    text-align: right;
+                }
+
+                .body_repair__image--adaptive__item_price {
+                    position: relative;
+                    left: 10px;
+                }
+
+                &::after {
+                    content: "";
+                    display: block;
+                    width: 1px;
+                    height: 46px;
+                    background-color: var(--grey);
+                    transform: rotateZ(20deg);
+                    position: absolute;
+                    top: 35%;
+                    right: 118%;
+                }
+
+                @media (max-width: 500px) {
+                    top: 18%;
+                    left: 56%;
+                }
+            }
+
+            &--back_wing {
+                top: -6%;
+                left: 66%;
+
+
+                .body_repair__image--adaptive__item_title {
+                    width: 150%;
+                    text-align: right;
+                }
+
+                .body_repair__image--adaptive__item_price {
+                    text-align: right;
+                    position: relative;
+                    left: 40px;
+                }
+
+                &::after {
+                    content: "";
+                    display: block;
+                    width: 1px;
+                    height: 170px;
+                    background-color: var(--grey);
+                    transform: rotateZ(-30deg);
+                    position: absolute;
+                    top: 7%;
+                    right: 46%;
+                }
+
+                @media (max-width: 600px) {
+                    left: 61%;
+                }
+
+                @media (max-width: 500px) {
+                    top: 0%;
+                    left: 61%;
+
+                    &::after {
+                        height: 150px;
+                        top: 10%;
+                        right: 53%;
+                    }
+                }
+            }
+
+            &--boot_cover {
+                top: 9%;
+                left: 76%;
+
+                .body_repair__image--adaptive__item_title {
+                    width: 60%;
+                }
+
+                .body_repair__image--adaptive__item_price {
+                    position: relative;
+                    left: 25px;
+                }
+
+                &::after {
+                    content: "";
+                    display: block;
+                    width: 1px;
+                    height: 100px;
+                    background-color: var(--grey);
+                    transform: rotateZ(-30deg);
+                    position: absolute;
+                    top: 44%;
+                    right: 77%;
+                }
+
+                @media (max-width: 500px) {
+                    top: 10%;
+                    left: 73%;
+                }
+
+                @media (max-width: 400px) {
+                    top: 20%;
+                    left: 74%;
+
+                    &::after {
+                        height: 70px;
+                        top: 44%;
+                        right: 81%;
+                        transform: rotateZ(-35deg);
+                    }
+                }
+            }
+
+            &--back_bumper {
+                top: 85%;
+                left: 73.5%;
+
+                .body_repair__image--adaptive__item_title {
+                    width: 56%;
+                }
+
+                &::after {
+                    content: "";
+                    display: block;
+                    width: 1px;
+                    height: 100px;
+                    background-color: var(--grey);
+                    transform: rotateZ(10deg);
+                    position: absolute;
+                    top: -132%;
+                    right: 32%;
+                }
+
+                @media (max-width: 450px) {
+                    top: 79%;
+                    left: 70%;
+                }
+            }
+
+            &--body_sill {
+                top: 87%;
+                left: 55%;
+
+                .body_repair__image--adaptive__item_price {
+                    position: relative;
+                    left: 20px;
+                }
+
+                .body_repair__image--adaptive__item_title {
+                    text-align: right;
+                    width: 80%;
+                }
+
+                &::after {
+                    content: "";
+                    display: block;
+                    width: 1px;
+                    height: 100px;
+                    background-color: var(--grey);
+                    transform: rotateY(0deg);
+                    position: absolute;
+                    top: -134%;
+                    right: 100%;
+                }
+
+                @media (max-width: 500px) {
+                    top: 82%;
+                }
+            }
+
+            &--front_door {
+                top: 82%;
+                left: 38%;
+
+                .body_repair__image--adaptive__item_title {
+                    width: 90%;
+                }
+
+                .body_repair__image--adaptive__item_price {
+                    position: relative;
+                    left: 35px;
+                }
+
+                &::after {
+                    content: "";
+                    display: block;
+                    width: 1px;
+                    height: 130px;
+                    background-color: var(--grey);
+                    transform: rotateZ(0deg);
+                    position: absolute;
+                    top: -191%;
+                    right: 101%;
+                }
+
+                @media (max-width: 500px) {
+                    top: 72%;
+                    left: 38%;
+
+                    .body_repair__image--adaptive__item_title {
+                        width: 70%;
+                    }
+
+                    .body_repair__image--adaptive__item_price {
+                        left: 20px;
+                    }
+
+                    &::after {
+                        height: 100px;
+                        top: -133%;
+                        right: 101%;
+                    }
+                }
+            }
+
+            &--front_wing {
+                left: 17%;
+                top: 81%;
+
+                .body_repair__image--adaptive__item_title {
+                    width: 90%;
+                }
+
+                &::after {
+                    content: "";
+                    display: block;
+                    width: 1px;
+                    height: 130px;
+                    background-color: var(--grey);
+                    position: absolute;
+                    transform: rotateZ(0deg);
+                    top: -190%;
+                    right: 9%;
+                }
+
+                @media (max-width: 400px) {
+                    left: 13%;
+                    top: 73%;
+
+                    &::after {
+                        height: 100px;
+                        top: -134%;
+                        right: 9%;
                     }
                 }
             }

@@ -22,6 +22,7 @@
   padding: 0 250px;
   /* Колонка с формой*/
   /* Изображение "Кузовного ремонта" */
+  /* Адаптивное изображение "Кузовного ремонта" */
 }
 @media (max-width: 1650px) {
   .body_repair {
@@ -62,6 +63,11 @@
     gap: 70px;
   }
 }
+@media (max-width: 600px) {
+  .body_repair__wrapper {
+    gap: 0;
+  }
+}
 .body_repair__steps {
   display: flex;
   flex-direction: column;
@@ -69,6 +75,7 @@
 @media (max-width: 600px) {
   .body_repair__steps {
     align-self: flex-start;
+    width: 100%;
   }
 }
 .body_repair__steps--progress_bar {
@@ -147,6 +154,13 @@
   color: #000000;
   text-align: left;
 }
+@media (max-width: 600px) {
+  .body_repair__steps--caption {
+    font-size: 20px;
+    line-height: 26px;
+    width: 79%;
+  }
+}
 .body_repair__step {
   display: flex;
   flex-direction: column;
@@ -167,14 +181,9 @@
     transform: translateY(-375%);
   }
 }
-@media (max-width: 600px) and (max-width: 500px) {
-  .body_repair__step--step_3--adaptive {
-    transform: translateY(-445%);
-  }
-}
 @media (max-width: 600px) and (max-width: 450px) {
   .body_repair__step--step_3--adaptive {
-    transform: translateY(-310%);
+    transform: translateY(-445%);
   }
 }
 .body_repair__step--active {
@@ -186,6 +195,12 @@
   font-size: 16px;
   line-height: 19.5px;
 }
+@media (max-width: 600px) {
+  .body_repair__step--caption {
+    font-size: 14px;
+    line-height: 17.07px;
+  }
+}
 .body_repair__step--desc {
   font-weight: 400;
   font-size: 20px;
@@ -195,6 +210,8 @@
 @media (max-width: 600px) {
   .body_repair__step--desc {
     width: 100% !important;
+    font-size: 16px;
+    line-height: 19.5px;
   }
 }
 .body_repair__step:nth-of-type(1) .body_repair__step--desc {
@@ -354,6 +371,11 @@
   gap: 5px;
   pointer-events: none;
 }
+@media (max-width: 600px) {
+  .body_repair__leave_request--input_image_text {
+    gap: 20px;
+  }
+}
 .body_repair__leave_request--input_image--icon {
   min-width: 24px;
   min-height: 24px;
@@ -369,6 +391,13 @@
   white-space: wrap;
   width: 58%;
 }
+@media (max-width: 600px) {
+  .body_repair__leave_request--input_image--text {
+    font-size: 16px;
+    line-height: 20.8px;
+    width: 100%;
+  }
+}
 .body_repair__leave_request--input_image--choose {
   color: var(--dark-blue);
   text-decoration: underline;
@@ -377,6 +406,12 @@
   line-height: 26px;
   cursor: pointer;
   pointer-events: all;
+}
+@media (max-width: 600px) {
+  .body_repair__leave_request--input_image--choose {
+    font-size: 16px;
+    line-height: 20.8px;
+  }
 }
 .body_repair__leave_request--input_image--choose--drop {
   pointer-events: none;
@@ -392,6 +427,11 @@
   position: relative;
   right: 30px;
   /* Стили для каждого айтема */
+}
+@media (max-width: 600px) {
+  .body_repair__image {
+    display: none;
+  }
 }
 .body_repair__image_wrapper {
   height: 100%;
@@ -958,5 +998,392 @@
     transform: rotateZ(0deg);
     top: -260%;
     right: -11%;
+  }
+}
+.body_repair__image--adaptive {
+  display: none;
+  width: 110%;
+  height: 350px;
+  /* Стили для каждого айтема */
+}
+@media (max-width: 600px) {
+  .body_repair__image--adaptive {
+    display: block;
+  }
+}
+@media (max-width: 400px) {
+  .body_repair__image--adaptive {
+    width: 130%;
+  }
+}
+.body_repair__image--adaptive_wrapper {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+.body_repair__image--adaptive--img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.body_repair__image--adaptive__item {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  gap: 5px;
+  z-index: 1;
+  /* Индивидуальные стили для айтемов */
+}
+.body_repair__image--adaptive__item_title {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14.63px;
+  color: var(--dark-grey);
+  border-bottom: 1px #BCBCBC solid;
+  text-align: left;
+  width: 120%;
+}
+.body_repair__image--adaptive__item_price {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17.07px;
+  color: #000000;
+  text-align: left;
+}
+.body_repair__image--adaptive__item--front_bumper {
+  left: 13%;
+  top: 32%;
+}
+.body_repair__image--adaptive__item--front_bumper .body_repair__image--adaptive__item_title {
+  width: 60%;
+}
+.body_repair__image--adaptive__item--front_bumper::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 100px;
+  background-color: var(--grey);
+  transform: rotateZ(30deg);
+  position: absolute;
+  top: 43%;
+  right: 65%;
+}
+@media (max-width: 500px) {
+  .body_repair__image--adaptive__item--front_bumper {
+    top: 29%;
+    left: 12%;
+  }
+}
+@media (max-width: 400px) {
+  .body_repair__image--adaptive__item--front_bumper {
+    top: 26%;
+  }
+}
+.body_repair__image--adaptive__item--bonnet {
+  top: 10%;
+  left: 11%;
+}
+.body_repair__image--adaptive__item--bonnet::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 120px;
+  background-color: var(--grey);
+  transform: rotateZ(-22deg);
+  position: absolute;
+  top: 28%;
+  right: -72%;
+}
+@media (max-width: 400px) {
+  .body_repair__image--adaptive__item--bonnet {
+    top: 10%;
+    left: 11%;
+  }
+  .body_repair__image--adaptive__item--bonnet::after {
+    top: 32%;
+    right: -58%;
+    transform: rotateZ(-15deg);
+  }
+}
+.body_repair__image--adaptive__item--window {
+  top: -5%;
+  left: 15%;
+}
+.body_repair__image--adaptive__item--window::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 170px;
+  background-color: var(--grey);
+  transform: rotateZ(-35deg);
+  position: absolute;
+  top: -3%;
+  right: -126%;
+}
+@media (max-width: 500px) {
+  .body_repair__image--adaptive__item--window {
+    top: -1%;
+    left: 10%;
+  }
+}
+@media (max-width: 400px) {
+  .body_repair__image--adaptive__item--window {
+    top: -3%;
+    left: 12%;
+  }
+  .body_repair__image--adaptive__item--window::after {
+    transform: rotateZ(-25deg);
+    height: 150px;
+    top: 19%;
+    right: -90%;
+  }
+}
+.body_repair__image--adaptive__item--door_handle {
+  top: -1%;
+  left: 40%;
+}
+.body_repair__image--adaptive__item--door_handle::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 150px;
+  background-color: var(--grey);
+  transform: rotateZ(-7deg);
+  position: absolute;
+  top: 38%;
+  right: -42%;
+}
+@media (max-width: 450px) {
+  .body_repair__image--adaptive__item--door_handle {
+    left: 35%;
+  }
+}
+.body_repair__image--adaptive__item--roof {
+  top: 12%;
+  left: 56%;
+}
+.body_repair__image--adaptive__item--roof .body_repair__image--adaptive__item_title {
+  text-align: right;
+}
+.body_repair__image--adaptive__item--roof .body_repair__image--adaptive__item_price {
+  position: relative;
+  left: 10px;
+}
+.body_repair__image--adaptive__item--roof::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 46px;
+  background-color: var(--grey);
+  transform: rotateZ(20deg);
+  position: absolute;
+  top: 35%;
+  right: 118%;
+}
+@media (max-width: 500px) {
+  .body_repair__image--adaptive__item--roof {
+    top: 18%;
+    left: 56%;
+  }
+}
+.body_repair__image--adaptive__item--back_wing {
+  top: -6%;
+  left: 66%;
+}
+.body_repair__image--adaptive__item--back_wing .body_repair__image--adaptive__item_title {
+  width: 150%;
+  text-align: right;
+}
+.body_repair__image--adaptive__item--back_wing .body_repair__image--adaptive__item_price {
+  text-align: right;
+  position: relative;
+  left: 40px;
+}
+.body_repair__image--adaptive__item--back_wing::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 170px;
+  background-color: var(--grey);
+  transform: rotateZ(-30deg);
+  position: absolute;
+  top: 7%;
+  right: 46%;
+}
+@media (max-width: 600px) {
+  .body_repair__image--adaptive__item--back_wing {
+    left: 61%;
+  }
+}
+@media (max-width: 500px) {
+  .body_repair__image--adaptive__item--back_wing {
+    top: 0%;
+    left: 61%;
+  }
+  .body_repair__image--adaptive__item--back_wing::after {
+    height: 150px;
+    top: 10%;
+    right: 53%;
+  }
+}
+.body_repair__image--adaptive__item--boot_cover {
+  top: 9%;
+  left: 76%;
+}
+.body_repair__image--adaptive__item--boot_cover .body_repair__image--adaptive__item_title {
+  width: 60%;
+}
+.body_repair__image--adaptive__item--boot_cover .body_repair__image--adaptive__item_price {
+  position: relative;
+  left: 25px;
+}
+.body_repair__image--adaptive__item--boot_cover::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 100px;
+  background-color: var(--grey);
+  transform: rotateZ(-30deg);
+  position: absolute;
+  top: 44%;
+  right: 77%;
+}
+@media (max-width: 500px) {
+  .body_repair__image--adaptive__item--boot_cover {
+    top: 10%;
+    left: 73%;
+  }
+}
+@media (max-width: 400px) {
+  .body_repair__image--adaptive__item--boot_cover {
+    top: 20%;
+    left: 74%;
+  }
+  .body_repair__image--adaptive__item--boot_cover::after {
+    height: 70px;
+    top: 44%;
+    right: 81%;
+    transform: rotateZ(-35deg);
+  }
+}
+.body_repair__image--adaptive__item--back_bumper {
+  top: 85%;
+  left: 73.5%;
+}
+.body_repair__image--adaptive__item--back_bumper .body_repair__image--adaptive__item_title {
+  width: 56%;
+}
+.body_repair__image--adaptive__item--back_bumper::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 100px;
+  background-color: var(--grey);
+  transform: rotateZ(10deg);
+  position: absolute;
+  top: -132%;
+  right: 32%;
+}
+@media (max-width: 450px) {
+  .body_repair__image--adaptive__item--back_bumper {
+    top: 79%;
+    left: 70%;
+  }
+}
+.body_repair__image--adaptive__item--body_sill {
+  top: 87%;
+  left: 55%;
+}
+.body_repair__image--adaptive__item--body_sill .body_repair__image--adaptive__item_price {
+  position: relative;
+  left: 20px;
+}
+.body_repair__image--adaptive__item--body_sill .body_repair__image--adaptive__item_title {
+  text-align: right;
+  width: 80%;
+}
+.body_repair__image--adaptive__item--body_sill::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 100px;
+  background-color: var(--grey);
+  transform: rotateY(0deg);
+  position: absolute;
+  top: -134%;
+  right: 100%;
+}
+@media (max-width: 500px) {
+  .body_repair__image--adaptive__item--body_sill {
+    top: 82%;
+  }
+}
+.body_repair__image--adaptive__item--front_door {
+  top: 82%;
+  left: 38%;
+}
+.body_repair__image--adaptive__item--front_door .body_repair__image--adaptive__item_title {
+  width: 90%;
+}
+.body_repair__image--adaptive__item--front_door .body_repair__image--adaptive__item_price {
+  position: relative;
+  left: 35px;
+}
+.body_repair__image--adaptive__item--front_door::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 130px;
+  background-color: var(--grey);
+  transform: rotateZ(0deg);
+  position: absolute;
+  top: -191%;
+  right: 101%;
+}
+@media (max-width: 500px) {
+  .body_repair__image--adaptive__item--front_door {
+    top: 72%;
+    left: 38%;
+  }
+  .body_repair__image--adaptive__item--front_door .body_repair__image--adaptive__item_title {
+    width: 70%;
+  }
+  .body_repair__image--adaptive__item--front_door .body_repair__image--adaptive__item_price {
+    left: 20px;
+  }
+  .body_repair__image--adaptive__item--front_door::after {
+    height: 100px;
+    top: -133%;
+    right: 101%;
+  }
+}
+.body_repair__image--adaptive__item--front_wing {
+  left: 17%;
+  top: 81%;
+}
+.body_repair__image--adaptive__item--front_wing .body_repair__image--adaptive__item_title {
+  width: 90%;
+}
+.body_repair__image--adaptive__item--front_wing::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 130px;
+  background-color: var(--grey);
+  position: absolute;
+  transform: rotateZ(0deg);
+  top: -190%;
+  right: 9%;
+}
+@media (max-width: 400px) {
+  .body_repair__image--adaptive__item--front_wing {
+    left: 13%;
+    top: 73%;
+  }
+  .body_repair__image--adaptive__item--front_wing::after {
+    height: 100px;
+    top: -134%;
+    right: 9%;
   }
 }/*# sourceMappingURL=body_repair.css.map */
