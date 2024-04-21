@@ -260,6 +260,8 @@
 
         @media (max-width: 600px) {
             padding: 20px;
+            width: 100%;
+            margin-top: 20px;
         }
 
         &--caption {
@@ -278,6 +280,10 @@
             margin-top: 10px;
             width: 60%;
             align-self: center;
+
+            @media (max-width: 600px) {
+                width: 100%;
+            }
         }
 
         &--wrapper {
@@ -352,6 +358,10 @@
             overflow-x: auto;
             max-width: 600px;
             gap: 20px;
+
+            @media (max-width: 600px) {
+                width: 100%;
+            }
         }
 
 
@@ -365,6 +375,10 @@
             border-image-width: 2px;
             margin-top: 20px;
             transition: .5s ease-in all;
+
+            @media (max-width: 600px) {
+                height: 102px;
+            }
 
             &_text {
                 display: flex;

@@ -249,6 +249,8 @@
 @media (max-width: 600px) {
   .body_repair__leave_request {
     padding: 20px;
+    width: 100%;
+    margin-top: 20px;
   }
 }
 .body_repair__leave_request--caption {
@@ -266,6 +268,11 @@
   margin-top: 10px;
   width: 60%;
   align-self: center;
+}
+@media (max-width: 600px) {
+  .body_repair__leave_request--desc {
+    width: 100%;
+  }
 }
 .body_repair__leave_request--wrapper {
   display: flex;
@@ -346,6 +353,11 @@
   max-width: 600px;
   gap: 20px;
 }
+@media (max-width: 600px) {
+  .body_repair__leave_request__images {
+    width: 100%;
+  }
+}
 .body_repair__leave_request--input_image {
   width: 100%;
   height: 112px;
@@ -356,6 +368,11 @@
   border-image-width: 2px;
   margin-top: 20px;
   transition: 0.5s ease-in all;
+}
+@media (max-width: 600px) {
+  .body_repair__leave_request--input_image {
+    height: 102px;
+  }
 }
 .body_repair__leave_request--input_image_text {
   display: flex;
