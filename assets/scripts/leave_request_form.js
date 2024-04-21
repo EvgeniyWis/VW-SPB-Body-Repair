@@ -13,10 +13,15 @@ const body_repair__step__3 = document.getElementById("body_repair__step__3");
 const body_repair__leave_request__button = document.getElementById("body_repair__leave_request--button");
 const body_repair__leave_request = document.getElementById("body_repair__leave_request");
 const body_repair__steps__progress_bar = document.getElementById("body_repair__steps--progress_bar");
+const body_repair__leave_request__allImages = document.getElementById("body_repair__leave_request__allImages");
+const dt = new DataTransfer();
 
 
 /* Реализация drag-n-drop переноса изображения в форму */
 function leave_request__imageLoad(file) {
+    dt.items.add(file);
+    body_repair__leave_request__allImages.files = dt.files;
+
     const reader = new FileReader();
 
     reader.onload = function () {
@@ -27,7 +32,7 @@ function leave_request__imageLoad(file) {
 
         // Добавляю изображение в блок с загруженными изображениями:
         body_repair__leave_request__images.insertAdjacentHTML(`beforeend`,
-            `<img class="body_repair__leave_request__image" src="/wp-content/uploads/${file.name}" alt="Изображение, загруженное пользователем">`);
+            `<p>${file.name}</p>`);
 
         setTimeout(() => {
             body_repair__leave_request__input_image__text.innerHTML = 'Перетащите фото сюда или <a id="body_repair__leave_request--input_image_input" class="body_repair__leave_request--input_image--choose">выберите</a> из файлов';
@@ -100,6 +105,7 @@ body_repair__leave_request__input_image_input.addEventListener("click", () => {
 
 body_repair__leave_request__fileInput.addEventListener('change', () => {
     const file = body_repair__leave_request__fileInput.files[0];
+
 
     if (file.type.match('image.*')) {
         leave_request__imageLoad(file);

@@ -246,6 +246,7 @@
         color: #000000;
         justify-self: center;
         transition: opacity .5s ease-in;
+        width: 600px;
 
         &--disabled {
             opacity: .35;
@@ -348,16 +349,9 @@
         &__images {
             display: flex;
             max-height: 150px;
-            overflow-y: auto;
-            width: 100%;
-            gap: 10px;
-        }
-
-        &__image {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            border-radius: 5px;
+            overflow-x: auto;
+            max-width: 600px;
+            gap: 20px;
         }
 
 
