@@ -11,6 +11,6 @@
    1. Склонируйте данный репозиторий.
    2. Откройте файл ```index.html```
    
-Или вы можете просто зайти на [сайт](kriswis.github.io/VW-SPB-Body-Repair/), загруженный на Github Pages.
+Или вы можете просто зайти на [сайт](https://evgeniywis.github.io/VW-SPB-Body-Repair/), загруженный на Github Pages.
 # Макет:
 ![body repair](https://github.com/KrisWis/VW-SPB-Body-Repair/assets/94256853/e285cb63-17f4-49b3-9129-39ba2b16b0d4)
